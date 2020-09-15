@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card-columns">
+            {% for content in contents %}
+               <div class="card" style="width: 18rem;">
+                  <img src="/media/{{content.image}}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">{{content.title}}</h5>
+                    <p class="card-text">{{content.description}}</p>
+                    <a href="#" class="btn btn-primary" onclick="showModalWithImage('{{content.image}}')">View</a>
+                  </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
